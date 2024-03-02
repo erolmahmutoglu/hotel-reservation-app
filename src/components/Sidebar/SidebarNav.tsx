@@ -24,7 +24,7 @@ const SidebarNav = () => {
           key={index}
           label={link.value}
           href={link.link}
-          icon={<link.icon className="w-8 h-8 text-red-500" />}
+          icon={<link.icon className="w-8 h-8 text-green-500" />}
         />
       ))}
     </nav>
