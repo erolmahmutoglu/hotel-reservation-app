@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -17,6 +18,14 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body className={montserrat.className}>
+        <Header
+          logo="/svg/logo.svg"
+          navbarItems={[
+            { href: "/", label: "Anasayfa" },
+            { href: "/hakkimizda", label: "Hakkımızda" },
+            { href: "/iletisim", label: "İletişim" },
+          ]}
+        />
         <main className="md:container mx-auto flex min-h-screen flex-col items-center justify-start">
           {children}
         </main>
