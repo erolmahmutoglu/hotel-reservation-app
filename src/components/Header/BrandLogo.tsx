@@ -9,7 +9,9 @@ interface BrandLogoProps {
 const BrandLogo = ({ logo, alt }: BrandLogoProps) => {
   return (
     <Link href="/">
-      <Image src={logo} alt={alt} width={210} height={70} />
+      <div className="cursor-pointer w-36 h-12 md:w-48 md:h-16">
+        <Image src={logo} alt={alt} width={180} height={60} />
+      </div>
     </Link>
   );
 };

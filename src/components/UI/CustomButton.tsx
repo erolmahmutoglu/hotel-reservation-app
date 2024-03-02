@@ -19,7 +19,7 @@ const CustomButton = ({
       className={`px-6 py-3 rounded-xl active:scale-105 ${buttonVariant}`}
       type={type}
     >
-      <span className="text-white font-semibold text-md leading-6 ">
+      <span className="text-white font-semibold text-md leading-6 text-nowrap">
         {label}
       </span>
     </button>
