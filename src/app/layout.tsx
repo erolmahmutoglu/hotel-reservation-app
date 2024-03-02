@@ -26,7 +26,7 @@ export default function RootLayout({
             { href: "/iletisim", label: "İletişim" },
           ]}
         />
-        <main className="md:container mx-auto flex min-h-screen flex-col items-center justify-start">
+        <main className="md:container mx-auto flex min-h-screen flex-col items-center justify-start ">
           {children}
         </main>
       </body>
