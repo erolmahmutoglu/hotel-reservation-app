@@ -1,12 +1,13 @@
 import { Sidebar } from "..";
-import { CustomButton } from "../ui";
-import { CustomSheet } from "../ui/CustomUIComponents";
+import { CustomButton } from "../UI";
+import { CustomSheet } from "../UI/CustomUIComponents";
+
 import HamburgerMenu from "./HamburgerMenu";
 
 const ButtonsContainer = () => {
   return (
     <div className="flex items-center justify-end space-x-1">
-      <CustomButton label="Otel Ara" variant="primary" />
+      <CustomButton label="Rezervasyon" variant="primary" />
       <CustomSheet side="right" trigger={<HamburgerMenu />}>
         <Sidebar title="Menü" />
       </CustomSheet>

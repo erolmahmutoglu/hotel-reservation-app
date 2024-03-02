@@ -11,12 +11,12 @@ const CustomButton = ({
 }: CustomButtonProps) => {
   const buttonVariant =
     variant === "primary"
-      ? "bg-red-500 hover:bg-red-600"
+      ? "bg-green-500 hover:bg-green-500"
       : "bg-yellow-500 hover:bg-yellow-600";
 
   return (
     <button
-      className={`px-6 py-3 rounded-xl active:scale-105 ${buttonVariant}`}
+      className={`px-4 py-3 rounded-xl active:scale-105 ${buttonVariant}`}
       type={type}
     >
       <span className="text-white font-semibold text-md leading-6 text-nowrap">
