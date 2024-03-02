@@ -1,4 +1,4 @@
-import { Slider } from "@/components";
+import { MainTitle, Slider } from "@/components";
 
 export default function Homepage() {
   return (
@@ -13,6 +13,13 @@ export default function Homepage() {
           "/images/hotel-images/banner/6.jpeg",
           "/images/hotel-images/banner/7.jpeg",
         ]}
+      />
+      <MainTitle
+        title="Inn Bodrum"
+        description="Bodrum'un en güzel koylarından biri olan Torba Koyu'nda bulunan Inn Bodrum Hotel, 
+        denize sıfır konumu, özel plajı ve yüzme havuzu ile misafirlerine eşsiz bir tatil 
+        deneyimi sunuyor. Tesisin modern ve şık dekorasyonlu odalarında konaklayarak, 
+        deniz manzaralı balkonlarda keyifli bir tatil geçirebilirsiniz."
       />
     </section>
   );

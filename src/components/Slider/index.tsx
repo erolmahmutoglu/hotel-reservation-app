@@ -9,7 +9,7 @@ interface SliderProps {
 
 const Slider = ({ images }: SliderProps) => {
   return (
-    <section className="h-[550px] w-full flex rounded-2xl border-2 overflow-hidden mx-auto">
+    <section className="h-[480px] w-full flex rounded-2xl border-2 overflow-hidden mx-auto">
       <Carousel
         theme={{
           control: {
