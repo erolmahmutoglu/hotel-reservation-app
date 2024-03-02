@@ -23,10 +23,10 @@ const Slider = ({ images }: SliderProps) => {
         {images.map((image, index) => (
           <div key={index} className="flex relative w-full h-full">
             <Image
+              className="object-cover w-full h-full"
               src={image}
               alt={createAltText(image)}
               fill
-              objectFit="cover"
               placeholder="blur"
               blurDataURL="/images/loader.gif"
             />
