@@ -2,6 +2,7 @@ import Link from "next/link";
 
 interface CustomButtonProps {
   label: string;
+  icon?: React.ReactNode;
   link?: string;
   type?: "button" | "submit" | "reset";
   variant?: "primary" | "secondary";
@@ -9,18 +10,23 @@ interface CustomButtonProps {
 
 interface CustomButtonLabelProps {
   label: string;
+  icon?: React.ReactNode;
 }
 
-export const CustomButtonLabel = ({ label }: CustomButtonLabelProps) => {
+export const CustomButtonLabel = ({ label, icon }: CustomButtonLabelProps) => {
   return (
-    <span className="text-white font-semibold text-md leading-6 text-nowrap tracking-wider">
-      {label}
-    </span>
+    <>
+      {icon && icon}
+      <span className="text-white font-semibold text-md leading-6 text-nowrap tracking-wider">
+        {label}
+      </span>
+    </>
   );
 };
 
 const CustomButton = ({
   label,
+  icon,
   link,
   type = "button",
   variant = "primary",
@@ -35,17 +41,17 @@ const CustomButton = ({
       {link ? (
         <Link href={link}>
           <div
-            className={`px-2 md:px-4 py-3 rounded-xl active:scale-105 ${buttonVariant}`}
+            className={`flex items-center justify-center gap-2 px-2 md:px-4 py-3 rounded-xl active:scale-105 ${buttonVariant}`}
           >
-            <CustomButtonLabel label={label} />
+            <CustomButtonLabel label={label} icon={icon} />
           </div>
         </Link>
       ) : (
         <button
-          className={`px-4 py-3 rounded-xl active:scale-105 ${buttonVariant}`}
+          className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl active:scale-105 ${buttonVariant}`}
           type={type}
         >
-          <CustomButtonLabel label={label} />
+          <CustomButtonLabel label={label} icon={icon} />
         </button>
       )}
     </>
