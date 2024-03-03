@@ -34,7 +34,7 @@ const CustomButton = ({
   const buttonVariant =
     variant === "primary"
       ? "bg-green-500 hover:bg-green-500"
-      : "bg-yellow-500 hover:bg-yellow-600";
+      : "bg-yellow-400 hover:bg-yellow-500";
 
   return (
     <>
@@ -48,7 +48,7 @@ const CustomButton = ({
         </Link>
       ) : (
         <button
-          className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl active:scale-105 ${buttonVariant}`}
+          className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl active:scale-105 min-w-36 ${buttonVariant}`}
           type={type}
         >
           <CustomButtonLabel label={label} icon={icon} />

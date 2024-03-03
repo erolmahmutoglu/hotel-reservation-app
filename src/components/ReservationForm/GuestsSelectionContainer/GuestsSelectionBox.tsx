@@ -9,6 +9,7 @@ const GuestsSelectionBox = () => {
         title="Yetişkin"
         description="13 yaş ve üstü"
         defaultValue={1}
+        max={5}
       />
       <Separator />
       <GuestsSelectBoxItem
@@ -16,6 +17,7 @@ const GuestsSelectionBox = () => {
         title="Çocuk"
         description="2 - 12 yaş arası"
         defaultValue={0}
+        max={3}
       />
       <Separator />
       <GuestsSelectBoxItem
@@ -23,6 +25,7 @@ const GuestsSelectionBox = () => {
         title="Bebek"
         description="0 - 2 yaş arası"
         defaultValue={0}
+        max={2}
       />
     </div>
   );

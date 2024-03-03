@@ -1,6 +1,5 @@
 import { Sidebar } from "..";
-import { CustomButton } from "../UI";
-import { CustomSheet } from "../UI/CustomUIComponents";
+import { CustomButton, CustomSheet } from "../UI/CustomUIComponents";
 
 import HamburgerMenu from "./HamburgerMenu";
 

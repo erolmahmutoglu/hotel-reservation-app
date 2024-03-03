@@ -6,7 +6,7 @@ import { createAltText } from "@/lib/createAltText";
 const ReservationPage = () => {
   return (
     <section className="relative w-full flex flex-col items-center justify-center gap-4 mt-8">
-      <h1 className="absolute top-32 md:top-60  text-3xl md:text-4xl font-black  text-center text-green-500 bg-slate-50 py-3 px-8 h-16 rounded-xl z-20 text-nowrap">
+      <h1 className="absolute top-28 md:top-60  text-3xl md:text-4xl font-black  text-center text-green-500 bg-slate-50 py-3 px-8 h-16 rounded-xl z-20 text-nowrap">
         Rezervasyon Yap
       </h1>
       <div className="flex relative rounded-xl overflow-hidden w-full h-[400px] ">
