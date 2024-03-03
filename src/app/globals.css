@@ -71,6 +71,7 @@
 }
 .react-datepicker-wrapper input[type="text"]:focus {
   outline: none;
+  @apply ring-0;
 }
 
 @layer base {

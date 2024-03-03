@@ -8,6 +8,7 @@ import { z } from "zod";
 
 import { Form } from "@/components/UI/form";
 import { FormDateRangePicker } from "../UI/CustomUIComponents";
+import { UserGroupIcon } from "@heroicons/react/24/outline";
 
 import {
   Popover,
@@ -19,32 +20,38 @@ const formSchema = z.object({});
 
 const ReservationForm = () => {
   return (
-    <div className="flex items-end justify-center gap-4 shadow-lg px-8 py-2 bg-white rounded-[48px]">
+    <div className="flex flex-col md:flex-row items-start md:items-end justify-center gap-4 shadow-lg px-8 py-6 md:py-4 bg-white rounded-xl max-w-4xl">
       <FormDateRangePicker />
-      <Popover>
-        <PopoverTrigger asChild>
-          <div className="grid grid-cols-1">
-            <p className="text-slate-700 text-center text-sm font-bold">
-              Kişiler
-            </p>
-            <span className="flex items-center justify-center rounded-[48px] p-2 w-36 h-12  text-center text-slate-700 font-medium text-md focus:border-2 focus:border-yellow-500 cursor-pointer bg-transparent focus:bg-white mt-1">
-              <p>Misafir Ekleyin</p>
-            </span>
-          </div>
-        </PopoverTrigger>
-        <PopoverContent className="w-80"></PopoverContent>
-      </Popover>
+      <div className="flex gap-4 items-end">
+        <Popover>
+          <PopoverTrigger asChild>
+            <div className="grid grid-cols-1">
+              <label
+                htmlFor="guests"
+                className="w-full flex gap-2 items-center cursor-pointer"
+              >
+                <UserGroupIcon className="w-6 h-6 text-slate-700" />
+                <p className="text-slate-700 text-start text-sm font-bold">
+                  Kişiler
+                </p>
+              </label>
+              <input
+                type="button"
+                className="rounded-xl p-2 w-36 h-12 text-center text-slate-700 font-semibold text-md cursor-pointer bg-slate-100 mt-1
+               hover:bg-slate-200 transition-all duration-300 ease-in-out shadow-md
+                "
+                value="Misafir Ekleyin"
+              />
+            </div>
+          </PopoverTrigger>
+          <PopoverContent className="w-80"></PopoverContent>
+        </Popover>
 
-      <button className="group flex items-center justify-center gap-2 hover:w-40 w-14 h-14 bg-green-500 rounded-[48px]">
-        <MagnifyingGlassIcon className="w-8 h-8 text-white font-bold" />
-        <span
-          className="hidden
-        group-hover:block
-         text-white text-lg font-medium"
-        >
-          Arama
-        </span>
-      </button>
+        <button className="flex items-center justify-center gap-2 w-36 h-12 bg-green-500 rounded-xl">
+          <MagnifyingGlassIcon className="w-6 h-6 text-white font-bold" />
+          <span className="text-white text-md font-semibold">Oda Bul</span>
+        </button>
+      </div>
     </div>
   );
 };
