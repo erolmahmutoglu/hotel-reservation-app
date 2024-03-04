@@ -9,7 +9,9 @@ import GuestsSelectionContainer from "./GuestsSelectionContainer";
 import useManageForm from "./useManageForm";
 
 const ReservationForm = () => {
-  const { getFormValues, handleSubmit } = useManageForm();
+  const { getFormValues, handleSubmit, isLoading, rooms } = useManageForm();
+
+  console.log("firstRequest", isLoading, rooms);
 
   return (
     <form onSubmit={handleSubmit}>

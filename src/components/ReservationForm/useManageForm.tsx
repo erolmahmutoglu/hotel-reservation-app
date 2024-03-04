@@ -55,6 +55,9 @@ const useManageForm = () => {
 
   const [formErrors, setFormErrors] = useState<any>();
 
+  const [rooms, setRooms] = useState<any>();
+  const [isLoading, setIsLoading] = useState(false);
+
   const getFormValues = (value: any, name: string) => {
     setFormValues({ ...formValues, [name]: value });
   };
@@ -103,6 +106,36 @@ const useManageForm = () => {
     }
   };
 
+  const fetchRooms = async (requestData: SearchFormValues) => {
+    try {
+      setIsLoading(true);
+      const response = await fetch("/api", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestData),
+      });
+
+      const data = await response.json();
+      setRooms(data);
+      return data;
+    } catch (error) {
+      toast.error("Bir hata oluştu. Lütfen tekrar deneyin.", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -124,11 +157,11 @@ const useManageForm = () => {
       });
       return;
     }
-    //requestData is ready to send
-    console.log("requestData", requestData);
+
+    fetchRooms(requestData);
   };
 
-  return { getFormValues, handleSubmit, formErrors };
+  return { getFormValues, handleSubmit, formErrors, isLoading, rooms };
 };
 
 export default useManageForm;

@@ -3,10 +3,15 @@ import Image from "next/image";
 
 interface RoomDetailsProps {
   title: string;
+  detailedRoomPhotoUrl: string;
   details: string;
 }
 
-const RoomDetails = ({ title, details }: RoomDetailsProps) => {
+const RoomDetails = ({
+  title,
+  detailedRoomPhotoUrl,
+  details,
+}: RoomDetailsProps) => {
   return (
     <div className="grid grid-cols-1 w-full min-h-72 ">
       <h3 className="text-2xl text-center font-bold tracking-wide">{title}</h3>
@@ -14,7 +19,7 @@ const RoomDetails = ({ title, details }: RoomDetailsProps) => {
         <div className="h-full fw-full flex items-center justify-center">
           <Image
             className="rounded-lg"
-            src="/images/hotel-images/rooms/superior/1.jpg"
+            src={detailedRoomPhotoUrl}
             width={350}
             height={250}
             alt={createAltText(title)}

@@ -11,6 +11,7 @@ const AvailableRoomsContainer = () => {
         ]}
         features={{
           title: "Superior Oda",
+          detailedRoomPhotoUrl: "/images/hotel-images/rooms/superior/2.jpg",
           details:
             "Superior odalar 45 m² büyüklüğünde. Tam deniz manzaralı odalarda çift kişilik geniş bir yatak veya tek kişilik iki ayrı yatak, 49” LG 4K televizyon, 1 sofa, ahşap zemin, kanepe, çalışma masası, ütü ve ütü masası, banyoda duş, tuvalet, çift lavabo, giyinme bölümü, balkon ve balkonda koltuk bulunuyor.",
 
@@ -44,6 +45,7 @@ const AvailableRoomsContainer = () => {
         ]}
         features={{
           title: "Superior Oda",
+          detailedRoomPhotoUrl: "/images/hotel-images/rooms/superior/2.jpg",
           details:
             "Superior odalar 45 m² büyüklüğünde. Tam deniz manzaralı odalarda çift kişilik geniş bir yatak veya tek kişilik iki ayrı yatak, 49” LG 4K televizyon, 1 sofa, ahşap zemin, kanepe, çalışma masası, ütü ve ütü masası, banyoda duş, tuvalet, çift lavabo, giyinme bölümü, balkon ve balkonda koltuk bulunuyor.",
 
@@ -77,6 +79,7 @@ const AvailableRoomsContainer = () => {
         ]}
         features={{
           title: "Superior Oda",
+          detailedRoomPhotoUrl: "/images/hotel-images/rooms/superior/2.jpg",
           details:
             "Superior odalar 45 m² büyüklüğünde. Tam deniz manzaralı odalarda çift kişilik geniş bir yatak veya tek kişilik iki ayrı yatak, 49” LG 4K televizyon, 1 sofa, ahşap zemin, kanepe, çalışma masası, ütü ve ütü masası, banyoda duş, tuvalet, çift lavabo, giyinme bölümü, balkon ve balkonda koltuk bulunuyor.",
 

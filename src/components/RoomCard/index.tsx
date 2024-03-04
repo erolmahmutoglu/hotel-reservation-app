@@ -13,7 +13,7 @@ interface RoomCardProps {
       single: number;
       double: number;
     };
-
+    detailedRoomPhotoUrl: string;
     details: string;
   };
   accomodationDetails: {

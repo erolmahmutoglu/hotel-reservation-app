@@ -11,12 +11,20 @@ interface RoomCardTitleProps {
       single: number;
       double: number;
     };
+    detailedRoomPhotoUrl: string;
     details: string;
   };
 }
 
 const RoomCardTitle = ({
-  features: { title, beds, guests, squareMeters, details },
+  features: {
+    title,
+    beds,
+    guests,
+    squareMeters,
+    details,
+    detailedRoomPhotoUrl,
+  },
 }: RoomCardTitleProps) => {
   return (
     <div className="flex flex-col items-start justify-start gap-3 h-[200px] min-w-[300px] py-1 px-4 md:ps-10">
@@ -54,7 +62,11 @@ const RoomCardTitle = ({
           }
           classes="w-[700px] min-h-72 bg-yellow-50 rounded-lg"
         >
-          <RoomDetails title={title} details={details} />
+          <RoomDetails
+            title={title}
+            detailedRoomPhotoUrl={detailedRoomPhotoUrl}
+            details={details}
+          />
         </CustomPopover>
       </div>
     </div>
