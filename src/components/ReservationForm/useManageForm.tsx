@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import * as fn from "date-fns";
 
 import { z } from "zod";
+import { toast } from "react-toastify";
 
+import "react-toastify/dist/ReactToastify.css";
 const schema = z
   .object({
     startDate: z.date().min(fn.addDays(new Date(), -1), {
@@ -107,6 +109,21 @@ const useManageForm = () => {
     const data = getSearchFormValues(e);
     const { requestData, error } = getFormErrors(data);
 
+    if (error) {
+      const message = Object.values(error)[0][0];
+
+      toast.error(message, {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      return;
+    }
     //requestData is ready to send
     console.log("requestData", requestData);
   };
