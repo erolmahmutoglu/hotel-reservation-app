@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import * as fn from "date-fns";
 
 import { z } from "zod";
 import { toast } from "react-toastify";
 
+import { useAppSelector, useAppDispatch } from "../../lib/redux/hooks";
+
 import "react-toastify/dist/ReactToastify.css";
+import { getRooms } from "@/lib/redux/features/roomsSelector/roomsSelectorSlice";
+import { SearchFormValues } from "@/lib/types";
 const schema = z
   .object({
     startDate: z.date().min(fn.addDays(new Date(), -1), {
@@ -36,17 +40,6 @@ const schema = z
     path: ["endDate"],
   });
 
-type SearchFormValues = {
-  startDate: Date;
-  endDate: Date;
-  adults: number;
-  children: number;
-  infants: number;
-  minPrice: number;
-  maxPrice: number;
-  cancelFree: boolean;
-};
-
 const useManageForm = () => {
   const [formValues, setFormValues] = useState({
     startDate: new Date(),
@@ -54,6 +47,9 @@ const useManageForm = () => {
   });
 
   const [formErrors, setFormErrors] = useState<any>();
+
+  const dispatch = useAppDispatch();
+  const rooms = useAppSelector((state) => state.roomsSelector.rooms);
 
   const getFormValues = (value: any, name: string) => {
     setFormValues({ ...formValues, [name]: value });
@@ -103,6 +99,23 @@ const useManageForm = () => {
     }
   };
 
+  const fetchRooms = async (requestData: SearchFormValues) => {
+    try {
+      dispatch(getRooms(requestData));
+    } catch (error) {
+      toast.error("Bir hata oluştu. Lütfen tekrar deneyin.", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -124,8 +137,8 @@ const useManageForm = () => {
       });
       return;
     }
-    //requestData is ready to send
-    console.log("requestData", requestData);
+
+    fetchRooms(requestData);
   };
 
   return { getFormValues, handleSubmit, formErrors };

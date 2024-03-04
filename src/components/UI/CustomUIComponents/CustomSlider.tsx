@@ -1,15 +1,27 @@
 import Image from "next/image";
-import { Carousel } from "flowbite-react";
 
 import { createAltText } from "@/lib/createAltText";
+import { Carousel } from "flowbite-react";
 
-interface SliderProps {
-  images: Array<string>;
+interface CustomSliderProps {
+  images: string[];
+  sliderInterval?: number;
+  pauseOnHover?: boolean;
+  slide?: boolean;
+  classes?: string;
 }
 
-const Slider = ({ images }: SliderProps) => {
+const CustomSlider = ({
+  images,
+  slide = true,
+  sliderInterval = 6000,
+  pauseOnHover = true,
+  classes = "w-full h-[450px]",
+}: CustomSliderProps) => {
+  const containerClassess = `${classes} flex rounded-2xl border-2 overflow-hidden mx-auto`;
+
   return (
-    <section className="h-[480px] w-full flex rounded-2xl border-2 overflow-hidden mx-auto">
+    <section className={containerClassess}>
       <Carousel
         theme={{
           control: {
@@ -17,8 +29,9 @@ const Slider = ({ images }: SliderProps) => {
             icon: "h-5 w-5 text-black dark:text-slate-300",
           },
         }}
-        slideInterval={6000}
-        pauseOnHover
+        slideInterval={sliderInterval}
+        pauseOnHover={pauseOnHover}
+        slide={slide}
       >
         {images.map((image, index) => (
           <div key={index} className="flex relative w-full h-full">
@@ -37,4 +50,4 @@ const Slider = ({ images }: SliderProps) => {
   );
 };
 
-export default Slider;
+export default CustomSlider;

@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "images": [
+      "/images/hotel-images/rooms/superior/1.jpg",
+      "/images/hotel-images/rooms/superior/2.jpg",
+      "/images/hotel-images/rooms/superior/3.jpg"
+    ],
+    "features": {
+      "title": "Süperior Deniz Manzaralı",
+      "squareMeters": 45,
+      "guests": 4,
+      "beds": {
+        "single": 1,
+        "double": 1
+      },
+      "detailedRoomPhotoUrl": "/images/hotel-images/rooms/superior/2.jpg",
+      "details": "Superior odalar 45 m² büyüklüğünde. Tam deniz manzaralı odalarda çift kişilik geniş bir yatak veya tek kişilik iki ayrı yatak, 49” LG 4K televizyon, 1 sofa, ahşap zemin, kanepe, çalışma masası, ütü ve ütü masası, banyoda duş, tuvalet, çift lavabo, giyinme bölümü, balkon ve balkonda koltuk bulunuyor."
+    },
+    "accomodationDetails": {
+      "accomodation": "Her Şey Dahil",
+      "seaView": true,
+      "cancelFree": true,
+      "cigarette": false
+    },
+    "reservationDetails": {
+      "nights": 7,
+      "nightlyPrice": 1100,
+      "discountRate": 20,
+      "totalPrice": 7700,
+      "discountedTotalPrice": 6160,
+      "currency": "TRY"
+    }
+  },
+  {
+    "id": 2,
+    "images": [
+      "/images/hotel-images/rooms/family/1.jpg",
+      "/images/hotel-images/rooms/family/2.jpg",
+      "/images/hotel-images/rooms/family/3.jpg"
+    ],
+    "features": {
+      "title": "Deniz Manzaralı Aile Odası",
+      "squareMeters": 65,
+      "guests": 8,
+      "beds": {
+        "single": 4,
+        "double": 2
+      },
+      "detailedRoomPhotoUrl": "/images/hotel-images/rooms/family/2.jpg",
+      "details": "Deniz Manzaralı Aile odaları 65 m² büyüklüğünde. Odalarda çift kişilik iki yatak ve tek kişilik dört ayrı yatak bulunuyor. Ayrıca iki lavabo, giyinme bölümü ve balkonda koltuk mevcut."
+    },
+    "accomodationDetails": {
+      "accomodation": "Her Şey Dahil",
+      "seaView": true,
+      "cancelFree": true,
+      "cigarette": false
+    },
+    "reservationDetails": {
+      "nights": 7,
+      "nightlyPrice": 1500,
+      "discountRate": 20,
+      "totalPrice": 10500,
+      "discountedTotalPrice": 8400,
+      "currency": "TRY"
+    }
+  },
+  {
+    "id": 3,
+    "images": [
+      "/images/hotel-images/rooms/deluxe/1.jpg",
+      "/images/hotel-images/rooms/deluxe/2.jpg",
+      "/images/hotel-images/rooms/deluxe/3.jpg"
+    ],
+    "features": {
+      "title": "Deniz Manzaralı Deluxe Oda",
+      "squareMeters": 55,
+      "guests": 2,
+      "beds": {
+        "single": 0,
+        "double": 1
+      },
+      "detailedRoomPhotoUrl": "/images/hotel-images/rooms/deluxe/2.jpg",
+      "details": "Deniz Manzaralı Deluxe Oda 55 m2dir. Cepheden deniz manzaralı odalarda, 1 çift kişilik geniş yatak, 49” LG 4K TV,  kanepe, duş, tuvalet, çift lavabo ve giyinme alanı, terasda koltuk ve jakuzi bulunuyor."
+    },
+    "accomodationDetails": {
+      "accomodation": "Her Şey Dahil",
+      "seaView": true,
+      "cancelFree": true,
+      "cigarette": true
+    },
+    "reservationDetails": {
+      "nights": 7,
+      "nightlyPrice": 3000,
+      "discountRate": 20,
+      "totalPrice": 21000,
+      "discountedTotalPrice": 16800,
+      "currency": "TRY"
+    }
+  }
+]
