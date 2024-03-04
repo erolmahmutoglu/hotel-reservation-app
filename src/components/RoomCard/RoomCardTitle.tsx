@@ -1,19 +1,10 @@
 import { LuBedDouble, LuBedSingle, LuUsers, LuScan } from "react-icons/lu";
 import { CustomPopover } from "../UI/CustomUIComponents";
 import RoomDetails from "./RoomDetails";
+import { IFeatures } from "@/lib/types";
 
 interface RoomCardTitleProps {
-  features: {
-    title: string;
-    squareMeters: number;
-    guests: number;
-    beds: {
-      single: number;
-      double: number;
-    };
-    detailedRoomPhotoUrl: string;
-    details: string;
-  };
+  features: IFeatures;
 }
 
 const RoomCardTitle = ({
@@ -57,7 +48,7 @@ const RoomCardTitle = ({
         <CustomPopover
           trigger={
             <button className="w-full py-2 px-4 text-xs font-bold text-white bg-yellow-400 rounded-md">
-              Tüm Özellikler
+              Oda Detayları
             </button>
           }
           classes="w-[700px] min-h-72 bg-yellow-50 rounded-lg"

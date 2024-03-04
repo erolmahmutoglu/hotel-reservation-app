@@ -2,34 +2,17 @@ import { CustomSlider } from "../UI/CustomUIComponents";
 import AccomodationDetails from "./AccomodationDetails";
 import ReservationDetails from "./ReservationDetails";
 import RoomCardTitle from "./RoomCardTitle";
+import {
+  IFeatures,
+  IAccomodationDetails,
+  IReservationDetails,
+} from "@/lib/types";
 
 interface RoomCardProps {
   images: string[];
-  features: {
-    title: string;
-    squareMeters: number;
-    guests: number;
-    beds: {
-      single: number;
-      double: number;
-    };
-    detailedRoomPhotoUrl: string;
-    details: string;
-  };
-  accomodationDetails: {
-    accomodation: string;
-    seaView: boolean;
-    cancelFree: boolean;
-    cigarette: boolean;
-  };
-  reservationDetails: {
-    nights: number;
-    nightlyPrice: number;
-    discountRate: number;
-    totalPrice: number;
-    discountedTotalPrice: number;
-    currency: string;
-  };
+  features: IFeatures;
+  accomodationDetails: IAccomodationDetails;
+  reservationDetails: IReservationDetails;
 }
 
 const RoomCard = ({

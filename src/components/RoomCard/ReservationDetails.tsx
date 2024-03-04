@@ -1,15 +1,9 @@
 import { LuCreditCard } from "react-icons/lu";
 import { CustomButton } from "../UI/CustomUIComponents";
+import { IReservationDetails } from "@/lib/types";
 
 interface ReservationDetailsProps {
-  reservationDetails: {
-    nights: number;
-    nightlyPrice: number;
-    discountRate: number;
-    totalPrice: number;
-    discountedTotalPrice: number;
-    currency: string;
-  };
+  reservationDetails: IReservationDetails;
 }
 
 const ReservationDetails = ({

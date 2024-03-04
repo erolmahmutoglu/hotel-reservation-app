@@ -1,3 +1,4 @@
+import { IAccomodationDetails } from "@/lib/types";
 import {
   LuCigaretteOff,
   LuBadgeDollarSign,
@@ -6,12 +7,7 @@ import {
 } from "react-icons/lu";
 
 interface AccomodationDetailsProps {
-  accomodationDetails: {
-    cancelFree: boolean;
-    accomodation: string;
-    seaView: boolean;
-    cigarette: boolean;
-  };
+  accomodationDetails: IAccomodationDetails;
 }
 
 const AccomodationDetails = ({
