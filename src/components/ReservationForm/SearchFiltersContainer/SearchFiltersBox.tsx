@@ -5,8 +5,20 @@ import { useState } from "react";
 import { Separator } from "@/components/UI/separator";
 import { Checkbox } from "@/components/UI/checkbox";
 
-const SearchFiltersBox = () => {
-  const [value, setValue] = useState([10, 10000]);
+interface SearchFiltersBoxProps {
+  filters: {
+    minPrice: number;
+    maxPrice: number;
+    cancelFree: boolean;
+  };
+  handleFiltersChange: (name: string, value: number | boolean) => void;
+}
+
+const SearchFiltersBox = ({
+  filters,
+  handleFiltersChange,
+}: SearchFiltersBoxProps) => {
+  const [value, setValue] = useState([filters.minPrice, filters.maxPrice]);
 
   return (
     <div className="w-full h-30 grid grid-cols-1 py-3 gap-4">
@@ -20,8 +32,14 @@ const SearchFiltersBox = () => {
           max={10000}
           step={1}
           defaultValue={[10, 10000]}
-          value={value}
-          onChange={(value) => setValue(value as [number, number])}
+          value={value as [number, number]}
+          onChange={(val) => {
+            setValue(val as [number, number]);
+            if (typeof val === "object") {
+              handleFiltersChange("minPrice", val[0]);
+              handleFiltersChange("maxPrice", val[1]);
+            }
+          }}
         />
       </div>
       <div className="flex justify-between">
@@ -36,6 +54,7 @@ const SearchFiltersBox = () => {
             value={value[0]}
             onChange={(e) => {
               setValue((prevValue) => [parseInt(e.target.value), prevValue[1]]);
+              handleFiltersChange("minPrice", parseInt(e.target.value));
             }}
           />
           <label
@@ -57,6 +76,7 @@ const SearchFiltersBox = () => {
             value={value[1]}
             onChange={(e) => {
               setValue((prevValue) => [prevValue[0], parseInt(e.target.value)]);
+              handleFiltersChange("maxPrice", parseInt(e.target.value));
             }}
           />
           <label
@@ -71,7 +91,16 @@ const SearchFiltersBox = () => {
       <CustomButton label="Filtrele" variant="secondary" />
       <div className="flex flex-col gap-4">
         <div className="flex items-center space-x-2">
-          <Checkbox id="cancelFree" name="cancelFree" defaultChecked />
+          <Checkbox
+            id="cancelFree"
+            name="cancelFree"
+            defaultChecked
+            checked={filters.cancelFree}
+            onCheckedChange={(e) => {
+              console.log(e.valueOf());
+              handleFiltersChange("cancelFree", e.valueOf() as boolean);
+            }}
+          />
           <label htmlFor="cancelFree" className="text-sm font-medium ">
             Ücretsiz İptal
           </label>

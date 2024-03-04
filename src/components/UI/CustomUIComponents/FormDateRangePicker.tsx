@@ -29,8 +29,11 @@ const DatePickerLabel = ({ htmlFor, label }: DatePickerLabelProps) => {
     </label>
   );
 };
+interface FormDateRangePickerProps {
+  getFormValues: (value: any, name: string) => void;
+}
 
-const FormDateRangePicker = () => {
+const FormDateRangePicker = ({ getFormValues }: FormDateRangePickerProps) => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date(fn.addDays(new Date(), 1)));
 
@@ -46,7 +49,10 @@ const FormDateRangePicker = () => {
           name="checkIn"
           className={datePickerClasses}
           selected={startDate}
-          onChange={(date: Date) => setStartDate(date)}
+          onChange={(date: Date) => {
+            setStartDate(date);
+            getFormValues(date, "startDate");
+          }}
           selectsStart
           startDate={startDate}
           endDate={endDate}
@@ -61,7 +67,10 @@ const FormDateRangePicker = () => {
           name="checkOut"
           className={datePickerClasses}
           selected={endDate}
-          onChange={(date: Date) => setEndDate(date)}
+          onChange={(date: Date) => {
+            setEndDate(date);
+            getFormValues(date, "endDate");
+          }}
           selectsEnd
           startDate={startDate}
           endDate={endDate}

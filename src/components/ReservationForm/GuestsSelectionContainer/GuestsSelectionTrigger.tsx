@@ -27,9 +27,27 @@ const GuestsSelectionTrigger = ({ guests }: GuestsSelectionTriggerProps) => {
           guests.infants
         } Bebek`}
       />
-      <input type="hidden" value={guests.adults} />
-      <input type="hidden" value={guests.children} />
-      <input type="hidden" value={guests.infants} />
+      <input
+        className="sr-only"
+        type="number"
+        name="adults"
+        value={guests.adults}
+        onChange={() => {}}
+      />
+      <input
+        className="sr-only"
+        type="number"
+        name="children"
+        value={guests.children}
+        onChange={() => {}}
+      />
+      <input
+        className="sr-only"
+        type="number"
+        name="infants"
+        value={guests.infants}
+        onChange={() => {}}
+      />
     </div>
   );
 };
