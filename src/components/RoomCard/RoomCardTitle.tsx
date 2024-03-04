@@ -52,7 +52,7 @@ const RoomCardTitle = ({
               Tüm Özellikler
             </button>
           }
-          classes="w-[700px] min-h-72 bg-green-300 rounded-lg"
+          classes="w-[700px] min-h-72 bg-yellow-50 rounded-lg"
         >
           <RoomDetails title={title} details={details} />
         </CustomPopover>

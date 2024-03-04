@@ -39,7 +39,7 @@ const RoomCard = ({
   reservationDetails,
 }: RoomCardProps) => {
   return (
-    <article className="flex w-[350px] mx-auto md:w-[700px] xl:w-full  flex-col md:flex-row md:flex-wrap items-center justify-start gap-4 p-3 bg-white rounded-2xl shadow-lg">
+    <article className="flex w-[350px] mx-auto md:w-[700px] xl:w-full flex-col md:flex-row md:flex-wrap items-center justify-start gap-4 p-3 bg-white rounded-2xl shadow-lg">
       <div className="w-[300px] h-[200px]">
         <CustomSlider
           images={images}
