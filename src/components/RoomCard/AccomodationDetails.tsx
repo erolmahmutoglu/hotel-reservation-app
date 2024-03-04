@@ -14,7 +14,7 @@ const AccomodationDetails = ({
   accomodationDetails: { cancelFree, accomodation, seaView, cigarette },
 }: AccomodationDetailsProps) => {
   return (
-    <div className="flex flex-col items-start justify-center gap-3 h-[200px] min-w-[330px] p-4 bg-green-100 rounded-2xl">
+    <div className="flex flex-col items-start justify-center gap-3 h-[200px] w-[320px] md:w-[302px] xl:w-[230px]  p-4 bg-green-100 rounded-2xl">
       <ul className="flex flex-col gap-2">
         <li className="flex items-center justify-start gap-2 bg-slate-50 py-2 px-4 rounded-xl">
           <LuWine className="text-2xl font-bold" />

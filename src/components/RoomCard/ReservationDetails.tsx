@@ -17,7 +17,7 @@ const ReservationDetails = ({
   },
 }: ReservationDetailsProps) => {
   return (
-    <div className="flex flex-col items-end justify-start gap-1 h-[200px] min-w-[330px] py-4 px-8 bg-green-100 rounded-2xl">
+    <div className="flex flex-col items-end justify-start gap-1 h-[200px] w-[320px] py-4 px-8 bg-green-100 rounded-2xl">
       <p className="text-md font-medium">
         {nights} GECE x {nightlyPrice}
         {currency}

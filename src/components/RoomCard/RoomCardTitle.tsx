@@ -18,7 +18,7 @@ const RoomCardTitle = ({
   },
 }: RoomCardTitleProps) => {
   return (
-    <div className="flex flex-col items-start justify-start gap-3 h-[200px] min-w-[300px] py-1 px-4 md:ps-10">
+    <div className="flex flex-col items-start justify-start gap-3 h-[200px] w-[300px] p-1 ">
       <h2 className="text-xl font-bold tracking-wide">{title}</h2>
       <ul className="flex flex-col gap-2">
         <li className="flex items-center justify-start gap-2">
@@ -51,7 +51,7 @@ const RoomCardTitle = ({
               Oda Detayları
             </button>
           }
-          classes="w-[700px] min-h-72 bg-yellow-50 rounded-lg"
+          classes="w-[350px] xl:w-[700px]  min-h-72 bg-yellow-50 rounded-lg"
         >
           <RoomDetails
             title={title}

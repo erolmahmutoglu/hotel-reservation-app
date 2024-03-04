@@ -15,7 +15,7 @@ const RoomDetails = ({
   return (
     <div className="grid grid-cols-1 w-full min-h-72 ">
       <h3 className="text-2xl text-center font-bold tracking-wide">{title}</h3>
-      <div className="grid grid-cols-2 gap-4 w-full h-full">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 w-full h-full">
         <div className="h-full fw-full flex items-center justify-center">
           <Image
             className="rounded-lg"
