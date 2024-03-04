@@ -6,6 +6,7 @@ import MainTitle from "./MainTitle";
 import ReservationForm from "./ReservationForm";
 import RoomCard from "./RoomCard";
 import Footer from "./Footer";
+import SectionHeader from "./SectionHeader";
 
 export {
   Header,
@@ -16,4 +17,5 @@ export {
   ReservationForm,
   RoomCard,
   Footer,
+  SectionHeader,
 };

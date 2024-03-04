@@ -1,5 +1,6 @@
 import { MainTitle } from "..";
 import { CustomSlider } from "../UI/CustomUIComponents";
+import AboutUs from "./AboutUs";
 
 interface PageContainerProps {
   sliderImages: string[];
@@ -20,6 +21,7 @@ const PageContainer = ({ sliderImages, pageTitle }: PageContainerProps) => {
         slide
       />
       <MainTitle title={pageTitle.title} description={pageTitle.description} />
+      <AboutUs />
     </section>
   );
 };
