@@ -14,8 +14,7 @@ const PageContainer = ({ sliderImages, pageTitle }: PageContainerProps) => {
     <section className="flex min-h-screen w-full flex-col items-center justify-start py-4">
       <CustomSlider
         images={sliderImages}
-        width="full"
-        height="[480px]"
+        classes="w-full h-[450px]"
         sliderInterval={6000}
         pauseOnHover
         slide

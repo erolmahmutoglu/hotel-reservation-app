@@ -8,8 +8,7 @@ interface CustomSliderProps {
   sliderInterval?: number;
   pauseOnHover?: boolean;
   slide?: boolean;
-  width: string;
-  height: string;
+  classes?: string;
 }
 
 const CustomSlider = ({
@@ -17,10 +16,9 @@ const CustomSlider = ({
   slide = true,
   sliderInterval = 6000,
   pauseOnHover = true,
-  width,
-  height,
+  classes = "w-full h-[450px]",
 }: CustomSliderProps) => {
-  const containerClassess = `h-${height} w-${width} flex rounded-2xl border-2 overflow-hidden mx-auto`;
+  const containerClassess = `${classes} flex rounded-2xl border-2 overflow-hidden mx-auto`;
 
   return (
     <section className={containerClassess}>

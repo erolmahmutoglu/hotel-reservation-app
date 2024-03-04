@@ -7,13 +7,18 @@ import {
 interface CustomPopoverProps {
   trigger: React.ReactNode;
   children?: React.ReactNode;
+  classes?: string;
 }
 
-const CustomPopover = ({ trigger, children }: CustomPopoverProps) => {
+const CustomPopover = ({
+  trigger,
+  children,
+  classes = "w-80",
+}: CustomPopoverProps) => {
   return (
     <Popover>
       <PopoverTrigger>{trigger}</PopoverTrigger>
-      <PopoverContent className="w-80">{children}</PopoverContent>
+      <PopoverContent className={classes}>{children}</PopoverContent>
     </Popover>
   );
 };
