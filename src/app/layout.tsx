@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components";
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -26,9 +29,10 @@ export default function RootLayout({
             { href: "/iletisim", label: "İletişim" },
           ]}
         />
-        <main className="md:container mx-auto flex min-h-screen flex-col items-center justify-start">
+        <main className="md:container mx-auto flex min-h-screen flex-col items-center justify-start ">
           {children}
         </main>
+        <ToastContainer />
       </body>
     </html>
   );

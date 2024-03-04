@@ -11,7 +11,7 @@ const Sidebar = ({ title }: SidebarProps) => {
       <div className="flex items-start justify-center w-full">
         <BrandLogo logo="/svg/logo.svg" alt="otelfiyat.com" />
       </div>
-      <h2 className="text-2xl font-extrabold text-yellow-500 p-2 text-center">
+      <h2 className="text-2xl font-extrabold text-yellow-400 p-2 text-center">
         {title}
       </h2>
       <SidebarNav />
