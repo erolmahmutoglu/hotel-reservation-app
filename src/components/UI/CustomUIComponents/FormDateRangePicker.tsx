@@ -43,6 +43,7 @@ const FormDateRangePicker = () => {
         <DatePickerLabel htmlFor="check-in" label="Giriş" />
         <DatePicker
           id="check-in"
+          name="checkIn"
           className={datePickerClasses}
           selected={startDate}
           onChange={(date: Date) => setStartDate(date)}
@@ -57,6 +58,7 @@ const FormDateRangePicker = () => {
         <DatePickerLabel htmlFor="check-out" label="Çıkış" />
         <DatePicker
           id="check-out"
+          name="checkOut"
           className={datePickerClasses}
           selected={endDate}
           onChange={(date: Date) => setEndDate(date)}

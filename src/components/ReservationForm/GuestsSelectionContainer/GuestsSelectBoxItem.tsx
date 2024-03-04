@@ -6,8 +6,14 @@ interface GuestsSelectBoxItemProps {
   name: string;
   title: string;
   description: string;
-  defaultValue: number;
   max: number;
+  min: number;
+  guests: {
+    adults: number;
+    children: number;
+    infants: number;
+  };
+  handleChange: (name: string, value: number) => void;
 }
 
 interface SelectionButtonProps {
@@ -30,23 +36,33 @@ const GuestsSelectBoxItem = ({
   name,
   title,
   description,
-  defaultValue,
   max,
+  min,
+  guests,
+  handleChange,
 }: GuestsSelectBoxItemProps) => {
-  const [amount, setAmount] = useState(defaultValue);
+  const [amount, setAmount] = useState(
+    guests[name as keyof typeof guests] as number
+  );
 
   const handleIncrement = () => {
     setAmount((prev) => {
-      if (prev === max) return max;
-
+      if (prev === max) {
+        handleChange(name, max);
+        return max;
+      }
+      handleChange(name, prev + 1);
       return prev + 1;
     });
   };
 
   const handleDecrement = () => {
     setAmount((prev) => {
-      if (prev === 0) return 0;
-
+      if (prev === min) {
+        handleChange(name, min);
+        return min;
+      }
+      handleChange(name, prev - 1);
       return prev - 1;
     });
   };

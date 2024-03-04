@@ -1,6 +1,14 @@
 import { UserGroupIcon } from "@heroicons/react/24/outline";
 
-const GuestsSelectionTrigger = () => {
+interface GuestsSelectionTriggerProps {
+  guests: {
+    adults: number;
+    children: number;
+    infants: number;
+  };
+}
+
+const GuestsSelectionTrigger = ({ guests }: GuestsSelectionTriggerProps) => {
   return (
     <div className="grid grid-cols-1">
       <label
@@ -12,11 +20,16 @@ const GuestsSelectionTrigger = () => {
       </label>
       <input
         type="button"
-        className="rounded-xl p-2 w-36 h-12 text-center text-slate-700 font-semibold text-md cursor-pointer bg-slate-100 mt-1
+        className="rounded-xl p-2 w-36 h-12 text-center text-slate-700 font-semibold text-sm cursor-pointer bg-slate-100 mt-1
  hover:bg-slate-200 transition-all duration-300 ease-in-out shadow-md
   "
-        value="Misafir Ekleyin"
+        value={`${guests.adults + guests.children} Misafir, ${
+          guests.infants
+        } Bebek`}
       />
+      <input type="hidden" value={guests.adults} />
+      <input type="hidden" value={guests.children} />
+      <input type="hidden" value={guests.infants} />
     </div>
   );
 };

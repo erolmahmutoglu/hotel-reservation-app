@@ -6,7 +6,7 @@ import { Separator } from "@/components/UI/separator";
 import { Checkbox } from "@/components/UI/checkbox";
 
 const SearchFiltersBox = () => {
-  const [value, setValue] = useState([100, 1000]);
+  const [value, setValue] = useState([10, 10000]);
 
   return (
     <div className="w-full h-30 grid grid-cols-1 py-3 gap-4">
@@ -14,15 +14,16 @@ const SearchFiltersBox = () => {
         <p className="text-lg text-slate-900 font-medium">Fiyat Aralığı</p>
         <p className="text-sm text-slate-500">Gecelik fiyat aralığını seçin</p>
       </div>
-
-      <CustomRangeSlider
-        min={500}
-        max={10000}
-        step={1}
-        defaultValue={[1000, 5000]}
-        value={value}
-        onChange={(value) => setValue(value as [number, number])}
-      />
+      <div className="w-full h-30 grid grid-cols-1 py-3 gap-4">
+        <CustomRangeSlider
+          min={10}
+          max={10000}
+          step={1}
+          defaultValue={[10, 10000]}
+          value={value}
+          onChange={(value) => setValue(value as [number, number])}
+        />
+      </div>
       <div className="flex justify-between">
         <div className="flex gap-1 items-center">
           <Input
@@ -66,21 +67,16 @@ const SearchFiltersBox = () => {
           </label>
         </div>
       </div>
-      <Separator className="mt-2" />
-      <div className="flex flex-col gap-1">
-        <div className="items-center justify-start flex space-x-2">
-          <Checkbox id="terms1" />
-          <div className="grid gap-1.5 leading-none">
-            <label
-              htmlFor="terms1"
-              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            >
-              Ücretsiz İptal
-            </label>
-          </div>
+      <Separator />
+      <CustomButton label="Filtrele" variant="secondary" />
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center space-x-2">
+          <Checkbox id="cancelFree" name="cancelFree" defaultChecked />
+          <label htmlFor="cancelFree" className="text-sm font-medium ">
+            Ücretsiz İptal
+          </label>
         </div>
       </div>
-      <CustomButton label="Filtrele" variant="secondary" />
     </div>
   );
 };
