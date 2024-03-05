@@ -42,6 +42,8 @@ const Rooms = ({
           width={600}
           height={400}
           alt={createAltText("Bir oda içerisindeki yatak ve oturma alanı")}
+          placeholder="blur"
+          blurDataURL="/images/loader.gif"
         />
       </div>
     </section>

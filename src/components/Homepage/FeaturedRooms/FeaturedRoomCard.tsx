@@ -26,11 +26,13 @@ const FeaturedRoomCard = ({
       <article className="group w-full max-w-[500px] mx-auto  rounded-xl border border-slate-200 shadow-md cursor-pointer overflow-hidden grid grid-cols-1 items-stretch">
         <div className="w-full h-1/2">
           <Image
+            className="rounded-t-xl object-cover object-center mb-4 hover:scale-105 transition-all duration-300"
             src={image}
             alt={createAltText(title)}
             width={500}
             height={300}
-            className="rounded-t-xl object-cover object-center mb-4 hover:scale-105 transition-all duration-300"
+            placeholder="blur"
+            blurDataURL="/images/loader.gif"
           />
         </div>
         <div className="w-full  rounded-b-xl flex flex-col items-start justify-end gap-2 p-4">

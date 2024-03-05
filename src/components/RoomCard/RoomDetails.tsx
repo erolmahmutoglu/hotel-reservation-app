@@ -23,6 +23,8 @@ const RoomDetails = ({
             width={350}
             height={250}
             alt={createAltText(title)}
+            placeholder="blur"
+            blurDataURL="/images/loader.gif"
           />
         </div>
         <div className="h-full flex flex-col items-start justify-start gap-2">

@@ -25,6 +25,8 @@ const SectionContainer = ({
           width={600}
           height={400}
           alt={createAltText(title)}
+          placeholder="blur"
+          blurDataURL="/images/loader.gif"
         />
       </div>
     </section>
