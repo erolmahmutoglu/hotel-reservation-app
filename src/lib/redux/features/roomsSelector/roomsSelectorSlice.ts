@@ -15,11 +15,17 @@ const initialState: RoomsSelectorState = {
   error: null,
 };
 
+const isDeployed = process.env.NODE_ENV === "production";
+
+const url = isDeployed
+  ? "https://inn-bodrum.vercel.app/api"
+  : "http://localhost:3000/api";
+
 export const getRooms = createAsyncThunk(
   "roomsSelector/fetchRooms",
   async (payload: SearchFormValues) => {
     try {
-      const response = await fetch("/api", {
+      const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
