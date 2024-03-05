@@ -8,11 +8,12 @@ import "react-toastify/dist/ReactToastify.css";
 import { Footer, Header } from "@/components";
 import { FOOTER_CONTENT } from "@/lib/pageContent/FooterContent";
 import { HEADER_CONTENT } from "@/lib/pageContent/HeaderContent";
+import Favicon from "@/components/Favicon";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Hotel Reservation App",
+  title: "Inn Bodrum",
   description: "Hotel Reservation App for reserving hotel rooms",
 };
 
@@ -23,6 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
+      <head>
+        <Favicon />
+      </head>
       <body className={montserrat.className}>
         <Header
           logo={HEADER_CONTENT.logo}
