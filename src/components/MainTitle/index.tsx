@@ -10,7 +10,7 @@ const MainTitle = ({ title, description }: MainTitleProps) => {
         {title}
       </h1>
       <div className=" max-w-5xl">
-        <p className="text-lg md:text-xl font-medium text-center text-slate-700 tracking-wide leading-loose">
+        <p className="text-lg md:text-xl font-medium text-center text-slate-700 tracking-wide leading-loose md:leading-loose">
           {description}
         </p>
       </div>
