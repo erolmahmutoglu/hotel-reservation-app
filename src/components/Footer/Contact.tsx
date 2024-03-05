@@ -3,6 +3,7 @@ import {
   EnvelopeIcon,
   MapPinIcon,
 } from "@heroicons/react/24/outline";
+import Container from "./Container";
 
 interface ContactProps {
   address: string;
@@ -11,28 +12,32 @@ interface ContactProps {
 }
 
 const Contact = ({ address, email, phone }: ContactProps) => {
+  const data = [
+    {
+      icon: <MapPinIcon className="w-6 h-6 text-slate-900" />,
+      label: address,
+    },
+    {
+      icon: <EnvelopeIcon className="w-6 h-6 text-slate-900" />,
+      label: email,
+    },
+    {
+      icon: <DevicePhoneMobileIcon className="w-6 h-6 text-slate-900" />,
+      label: phone,
+    },
+  ];
+
   return (
-    <div className="flex flex-1 flex-col items-start justify-start gap-6 w-full">
-      <h3 className="text-xl font-semibold text-slate-900">İletişim</h3>
-      <div className="flex items-center justify-start gap-4">
-        <span className="w-6 h-6">
-          <MapPinIcon className="w-6 h-6 text-slate-900" />
-        </span>
-        <span className="text-base text-slate-600">{address}</span>
-      </div>
-      <div className="flex items-center justify-start gap-2">
-        <span className="w-6 h-6">
-          <EnvelopeIcon className="w-6 h-6 text-slate-900" />
-        </span>
-        <span className="text-base text-slate-600">{email}</span>
-      </div>
-      <div className="flex items-center justify-start gap-2">
-        <span className="w-6 h-6">
-          <DevicePhoneMobileIcon className="w-6 h-6 text-slate-900" />
-        </span>
-        <span className="text-base text-slate-600">{phone}</span>
-      </div>
-    </div>
+    <Container title="İletişim">
+      {data.map((item, index) => {
+        return (
+          <div key={index} className="flex items-center justify-start gap-4">
+            <span className="w-6 h-6">{item.icon}</span>
+            <span className="text-base text-slate-600">{item.label}</span>
+          </div>
+        );
+      })}
+    </Container>
   );
 };
 
