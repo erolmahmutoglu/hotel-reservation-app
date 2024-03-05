@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 interface SidebarNavItemProps {
   icon: React.ReactNode;
   label: string;
