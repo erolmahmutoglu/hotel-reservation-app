@@ -16,7 +16,8 @@ const initialState: RoomsSelectorState = {
 };
 
 const base = process.env.NEXT_PUBLIC_API_URL;
-const url = `${base}/api`;
+
+const url = base ? base : "http://localhost:3000/api";
 
 export const getRooms = createAsyncThunk(
   "roomsSelector/fetchRooms",
