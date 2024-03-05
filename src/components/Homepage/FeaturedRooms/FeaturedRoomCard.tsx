@@ -9,17 +9,20 @@ interface FeaturedRoomCardProps {
   title: string;
   description: string;
   roomType: string;
+  targetLink: string;
+  targetLinkLabel: string;
   shorted?: boolean;
 }
 const FeaturedRoomCard = ({
   image,
   title,
   description,
-  roomType,
+  targetLink,
+  targetLinkLabel,
   shorted = false,
 }: FeaturedRoomCardProps) => {
   return (
-    <Link href={`/odalarimiz?roomType=${roomType}`}>
+    <Link href={targetLink}>
       <article className="group w-full max-w-[500px] mx-auto  rounded-xl border border-slate-200 shadow-md cursor-pointer overflow-hidden grid grid-cols-1 items-stretch">
         <div className="w-full h-1/2">
           <Image
@@ -44,7 +47,7 @@ const FeaturedRoomCard = ({
 
           <div className="w-full flex items-center justify-center gap-2 group-hover:translate-x-1 transition-all duration-300 bg-yellow-400 rounded-xl">
             <p className="text-white text-md font-semibold p-4">
-              Detayları Gör
+              {targetLinkLabel}
             </p>
             <ArrowLongRightIcon className="w-8 h-8 text-white" />
           </div>

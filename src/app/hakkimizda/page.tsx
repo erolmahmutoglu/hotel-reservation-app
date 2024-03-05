@@ -1,5 +1,5 @@
 import { PageContainer } from "@/components/AboutPage";
-import { ABOUT_US_PAGE_CONTENT } from "@/lib/pageContent/aboutUsPage";
+import { ABOUT_US_PAGE_CONTENT } from "@/lib/pageContent/AboutUsPageContent";
 
 const AboutUsPage = () => {
   return (
