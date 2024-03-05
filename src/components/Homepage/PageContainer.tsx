@@ -14,7 +14,7 @@ interface PageContainerProps {
 
 const PageContainer = ({ sliderImages, pageTitle }: PageContainerProps) => {
   return (
-    <section className="flex min-h-screen w-full flex-col items-center justify-start py-4">
+    <section className="flex min-h-screen w-full flex-col items-center justify-start py-4 mb-36">
       <CustomSlider
         images={sliderImages}
         classes="w-full h-[450px]"

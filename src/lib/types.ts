@@ -45,3 +45,17 @@ export interface SearchFormValues {
   maxPrice: number;
   cancelFree: boolean;
 }
+
+export interface IRoomDetails {
+  images: string[];
+  roomDetails: {
+    title: string;
+    basicInfo: {
+      area: number;
+      bedCount: number;
+      capacity: number;
+    };
+    description: string;
+    facilities: string[];
+  };
+}
