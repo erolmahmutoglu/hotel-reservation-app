@@ -5,16 +5,16 @@ import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 
 const AboutUs = () => {
   return (
-    <section className="w-full flex flex-col lg:flex-row items-start justify-center gap-4 py-8 mt-24">
+    <section className="w-full flex flex-col lg:flex-row items-start justify-center gap-8 lg:gap-4 py-8 mt-32 bg-green-100 rounded-xl">
       <div className="flex w-full lg:w-2/5 items-start justify-start">
-        <div className="flex flex-col gap-4 items-start justify-start w-full ">
+        <div className="flex flex-col gap-4 items-start justify-start w-full">
           <SectionHeader
             pretitle="Cennetin Kalbinde"
             title="Inn Bodrum Hotel"
             subtitle="Otelimiz, Bodrum'un sahilinde, berrak Ege Denizi'nin kıyısında yer alır. Özel plajı ve kristal berraklığındaki deniziyle tatilciler için mükemmel bir kaçış noktasıdır. Misafirlerimiz, sahildeki plajda güneşin ve denizin tadını çıkarırken, serinletici bir atmosferde dinlenme fırsatı bulacaklar."
           />
           <Link className="self-end" href="/hakkimizda">
-            <div className="group flex items-center justify-center gap-2  border-2 border-green-500 hover:bg-green-500 text-slate-700 font-semibold text-lg py-3 px-5 rounded-xl">
+            <div className="group flex items-center justify-center gap-2  border-2 border-green-500 hover:bg-green-500 text-slate-700 font-semibold text-lg py-3 px-5 rounded-xl me-4">
               <span className="text-green-500 group-hover:text-white">
                 Daha Fazla Bilgi
               </span>
