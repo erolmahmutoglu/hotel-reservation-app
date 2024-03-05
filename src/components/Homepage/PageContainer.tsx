@@ -1,6 +1,8 @@
 import { MainTitle } from "..";
 import { CustomSlider } from "../UI/CustomUIComponents";
 import AboutUs from "./AboutUs";
+import FeaturedRooms from "./FeaturedRooms";
+import Rooms from "./Rooms";
 
 interface PageContainerProps {
   sliderImages: string[];
@@ -22,6 +24,8 @@ const PageContainer = ({ sliderImages, pageTitle }: PageContainerProps) => {
       />
       <MainTitle title={pageTitle.title} description={pageTitle.description} />
       <AboutUs />
+      <Rooms />
+      <FeaturedRooms />
     </section>
   );
 };
