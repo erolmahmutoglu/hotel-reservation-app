@@ -2,7 +2,6 @@ interface SectionHeaderProps {
   pretitle?: string;
   title: string;
   subtitle?: string;
-  buttons?: { value: string; action?: () => void }[];
   orientation?: "start" | "center" | "end";
 }
 
@@ -10,7 +9,6 @@ const SectionHeader = ({
   pretitle,
   title,
   subtitle,
-  buttons,
   orientation = "start",
 }: SectionHeaderProps) => {
   return (
@@ -26,7 +24,6 @@ const SectionHeader = ({
           {subtitle}
         </p>
       </div>
-      {buttons && <div className="flex gap-4">buttons</div>}
     </header>
   );
 };

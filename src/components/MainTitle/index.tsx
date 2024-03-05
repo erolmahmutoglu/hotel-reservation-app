@@ -1,6 +1,6 @@
 interface MainTitleProps {
   title: string;
-  description: string;
+  description?: string;
 }
 
 const MainTitle = ({ title, description }: MainTitleProps) => {
@@ -9,11 +9,13 @@ const MainTitle = ({ title, description }: MainTitleProps) => {
       <h1 className="text-4xl md:text-6xl text-nowrap font-bold text-center text-green-500">
         {title}
       </h1>
-      <div className=" max-w-5xl">
-        <p className="text-lg md:text-xl font-medium text-center text-slate-700 tracking-wide leading-loose md:leading-loose">
-          {description}
-        </p>
-      </div>
+      {description && (
+        <div className=" max-w-5xl">
+          <p className="text-lg md:text-xl font-medium text-center text-slate-700 tracking-wide leading-loose md:leading-loose">
+            {description}
+          </p>
+        </div>
+      )}
     </section>
   );
 };

@@ -1,31 +1,31 @@
 import Link from "next/link";
+import Container from "./Container";
 
-const QuickLinks = () => {
+interface QuickLinksProps {
+  links: {
+    href: string;
+    label: string;
+  }[];
+}
+
+const QuickLinks = ({ links }: QuickLinksProps) => {
   return (
-    <div className="flex flex-1 flex-col items-start justify-start gap-6 w-full">
-      <h3 className="text-xl font-semibold text-slate-900">Hızlı Linkler</h3>
+    <Container title="Hızlı Linkler">
       <nav className="flex flex-col items-start justify-start gap-4">
-        <Link href="/hakkimizda">
-          <span
-            className="text-base text-slate-600
-           hover:text-green-500"
-          >
-            Hakkımızda
-          </span>
-        </Link>
-        <Link href="/rezervasyon">
-          <span className="text-base text-slate-600 hover:text-green-500">
-            Rezervasyon
-          </span>
-        </Link>
-
-        <Link href="/iletisim">
-          <span className="text-base text-slate-600 hover:text-green-500">
-            İletişim
-          </span>
-        </Link>
+        {links.map((link) => {
+          return (
+            <Link key={link.label} href={link.href}>
+              <span
+                className="text-base text-slate-600
+             hover:text-green-500"
+              >
+                {link.label}
+              </span>
+            </Link>
+          );
+        })}
       </nav>
-    </div>
+    </Container>
   );
 };
 
