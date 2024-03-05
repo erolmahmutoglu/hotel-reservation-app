@@ -15,11 +15,8 @@ const initialState: RoomsSelectorState = {
   error: null,
 };
 
-const isDeployed = process.env.NODE_ENV === "production";
-
-const url = isDeployed
-  ? "https://inn-bodrum.vercel.app/api"
-  : "http://localhost:3000/api";
+const base = process.env.NEXT_PUBLIC_API_URL;
+const url = `${base}/api`;
 
 export const getRooms = createAsyncThunk(
   "roomsSelector/fetchRooms",
