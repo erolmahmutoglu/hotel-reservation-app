@@ -11,6 +11,9 @@ const config = {
   ],
   prefix: "",
   theme: {
+    backgroundImage: {
+      "contact-form": "url('/images/hotel-images/about-us/2.jpg')",
+    },
     container: {
       center: true,
       padding: "2rem",
