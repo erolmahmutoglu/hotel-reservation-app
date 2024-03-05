@@ -10,7 +10,11 @@ const AvailableRoomsContainer = () => {
   return (
     <section className="w-full flex flex-col place-items-start gap-4 bg-white rounded-xl min-h-[705px] mb-24">
       {isLoading ? (
-        <RoomCardSkeleton />
+        <>
+          <RoomCardSkeleton />
+          <RoomCardSkeleton />
+          <RoomCardSkeleton />
+        </>
       ) : (
         rooms.map((room) => <RoomCard key={room.id} {...room} />)
       )}
