@@ -25,7 +25,7 @@ const PageContainer = ({
   aboutSpa,
 }: PageContainerProps) => {
   return (
-    <section className="flex min-h-screen w-full flex-col items-center justify-start py-4 mb-48 gap-24">
+    <section className="flex min-h-screen w-full flex-col items-center justify-start py-4 mb-48 gap-16">
       <MainTitle title={pageTitle.title} description={pageTitle.description} />
       <SectionContainer
         pretitle={aboutDesign.pretitle}

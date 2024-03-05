@@ -88,7 +88,7 @@ const SearchFiltersBox = ({
         </div>
       </div>
       <Separator />
-      <CustomButton label="Filtrele" variant="secondary" />
+      {/* <CustomButton label="Filtrele" variant="secondary" /> */}
       <div className="flex flex-col gap-4">
         <div className="flex items-center space-x-2">
           <Checkbox

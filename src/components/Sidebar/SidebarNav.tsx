@@ -2,6 +2,7 @@ import {
   EnvelopeIcon,
   HomeIcon,
   RocketLaunchIcon,
+  BookOpenIcon,
 } from "@heroicons/react/24/outline";
 
 import SidebarNavItem from "./SidebarNavItem";
@@ -13,6 +14,7 @@ const links = [
     link: "/hakkimizda",
     icon: RocketLaunchIcon,
   },
+  { value: "Rezervasyon", link: "/rezervasyon", icon: BookOpenIcon },
   { value: "İletişim", link: "/iletisim", icon: EnvelopeIcon },
 ];
 

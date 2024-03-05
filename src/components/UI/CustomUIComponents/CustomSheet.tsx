@@ -1,3 +1,4 @@
+"use client";
 import {
   Sheet,
   SheetContent,
@@ -5,7 +6,9 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+  SheetClose,
+} from "@/components/UI/sheet";
+import { useState } from "react";
 
 interface CustomSheetProps {
   title?: string;
@@ -22,8 +25,9 @@ const CustomSheet = ({
   side = "left",
   children,
 }: CustomSheetProps) => {
+  const [open, setOpen] = useState(false);
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger>{trigger}</SheetTrigger>
       <SheetContent className="w-[370px]" side={side}>
         <SheetHeader>
@@ -34,7 +38,10 @@ const CustomSheet = ({
           )}
           {description && <SheetDescription>{description}</SheetDescription>}
         </SheetHeader>
-        <div className="relative w-full h-full flex flex-col place-items-center pb-12">
+        <div
+          className="relative w-full h-full flex flex-col place-items-center pb-12"
+          onClick={() => setOpen(false)}
+        >
           {children}
         </div>
       </SheetContent>
