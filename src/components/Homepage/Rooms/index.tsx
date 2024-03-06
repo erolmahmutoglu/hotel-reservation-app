@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SectionHeader } from "@/components";
 import { createAltText } from "@/lib/createAltText";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+import { LOADER_BASE64 } from "@/lib/data";
 
 interface RoomsProps {
   header: {
@@ -43,7 +44,7 @@ const Rooms = ({
           height={400}
           alt={createAltText("Bir oda içerisindeki yatak ve oturma alanı")}
           placeholder="blur"
-          blurDataURL="/images/loader.gif"
+          blurDataURL={LOADER_BASE64}
         />
       </div>
     </section>

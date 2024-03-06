@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { SectionHeader } from "..";
 import { createAltText } from "@/lib/createAltText";
+import { LOADER_BASE64 } from "@/lib/data";
 
 interface SectionContainerProps {
   pretitle: string;
@@ -26,7 +27,7 @@ const SectionContainer = ({
           height={400}
           alt={createAltText(title)}
           placeholder="blur"
-          blurDataURL="/images/loader.gif"
+          blurDataURL={LOADER_BASE64}
         />
       </div>
     </section>

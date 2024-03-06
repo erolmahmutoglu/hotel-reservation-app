@@ -1,5 +1,6 @@
 import { Separator } from "@/components/UI/separator";
 import { createAltText } from "@/lib/createAltText";
+import { LOADER_BASE64 } from "@/lib/data";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,7 +33,7 @@ const FeaturedRoomCard = ({
             width={500}
             height={300}
             placeholder="blur"
-            blurDataURL="/images/loader.gif"
+            blurDataURL={LOADER_BASE64}
           />
         </div>
         <div className="w-full  rounded-b-xl flex flex-col items-start justify-end gap-2 p-4">

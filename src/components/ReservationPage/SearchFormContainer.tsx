@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { ReservationForm } from "..";
 import { createAltText } from "@/lib/createAltText";
+import { LOADER_BASE64 } from "@/lib/data";
 
 const SearchFormContainer = () => {
   return (
@@ -16,7 +17,7 @@ const SearchFormContainer = () => {
           alt={createAltText("/images/hotel-images/banner/8.jpeg")}
           fill
           placeholder="blur"
-          blurDataURL="/images/loader.gif"
+          blurDataURL={LOADER_BASE64}
         />
       </div>
       <div className="absolute flex flex-col items-center justify-center w-full h-full bg-gradient-to-t from-slate-800 to-transparent  top-0 left-0 z-10 rounded-xl" />

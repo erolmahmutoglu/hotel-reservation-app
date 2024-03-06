@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { createAltText } from "@/lib/createAltText";
 import { Carousel } from "flowbite-react";
+import { LOADER_BASE64 } from "@/lib/data";
 
 interface CustomSliderProps {
   images: string[];
@@ -41,7 +42,7 @@ const CustomSlider = ({
               alt={createAltText(image)}
               fill
               placeholder="blur"
-              blurDataURL="/images/loader.gif"
+              blurDataURL={LOADER_BASE64}
             />
           </div>
         ))}

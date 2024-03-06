@@ -1,4 +1,5 @@
 import { createAltText } from "@/lib/createAltText";
+import { LOADER_BASE64 } from "@/lib/data";
 import Image from "next/image";
 
 interface RoomDetailsProps {
@@ -24,7 +25,7 @@ const RoomDetails = ({
             height={250}
             alt={createAltText(title)}
             placeholder="blur"
-            blurDataURL="/images/loader.gif"
+            blurDataURL={LOADER_BASE64}
           />
         </div>
         <div className="h-full flex flex-col items-start justify-start gap-2">
