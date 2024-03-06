@@ -1,7 +1,7 @@
-import { redirect } from "next/navigation";
-
 import { PageContainer } from "@/components/RoomDetailsPage";
 import { ROOMS_DETAILS } from "@/lib/data";
+import OurRooms from "@/components/RoomDetailsPage/OurRooms";
+import { OUR_ROOMS_CONTENT } from "@/lib/pageContent/OurRoomsContent";
 
 type RoomType = "superior-oda" | "deluxe-oda" | "aile-odasi";
 interface PageParameters {
@@ -14,7 +14,7 @@ const RoomsPage = ({ searchParams }: PageParameters) => {
   );
 
   if (!room) {
-    redirect("/404");
+    return <OurRooms {...OUR_ROOMS_CONTENT} />;
   }
 
   return <PageContainer {...room} />;
